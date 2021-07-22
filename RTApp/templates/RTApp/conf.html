@@ -1,0 +1,51 @@
+{% extends 'RTApp/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<section class="services-section">
+            <div class="auto-container">
+
+                <div class="row clearfix">
+                    <!--Title Block-->
+                    <div class="title-block col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                        <div class="inner">
+                            <div class="sec-title">
+                                <h2>Robot <br>Teacher<span class="dot">.</span></h2>
+                                <div class="lower-text">Select the time Configurations</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Service Block-->
+                             
+                   <br>
+                   
+                            
+                </div>
+
+            </div><br>
+
+            <div class="auto-container">
+                    <form method = "POST">
+                        {% csrf_token %}
+
+                       
+                          {{form.as_p}}
+                          <div class="card-footer">
+                            <button class="btn btn-primary">Submit</button>
+                          </div>
+                        </div>
+                       
+
+                        
+                        
+                        
+
+                        
+                    </form>
+                    
+
+                
+            </section>
+            
+            {% endblock %}
+        </div>
