@@ -1,0 +1,81 @@
+{% extends 'RTApp/base.html' %}
+{% block content %}
+
+
+
+<section class="services-section">
+<div class="auto-container">
+    <div class="title-block col-xl-6 col-lg-12 col-md-12 col-sm-12">
+        <div class="inner">
+            <div class="sec-title">
+                <h2>Robot <br>Teacher<span class="dot">.</span></h2>
+                <!-- <div class="lower-text">Enter the time Configurations.</div> -->
+            </div>
+        </div>
+
+    </div>
+
+    <div class="title-block col-xl-6 col-lg-12 col-md-12 col-sm-12">
+        <div class="inner">
+            <div class="sec-title">
+                <h5 style="color: yellowgreen;">Class-5/ SECTION-A/ SUBJECT-2 <br></h5>
+                <h5 style="color: aliceblue;">Selected Topic  : <span style="color: orange;">Topic Name</span> </h5>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="title-block col-xl-6 col-lg-12 col-md-12 col-sm-12">
+        <div class="inner">
+            <div class="sec-title">
+               <div class="form-group">
+                   
+                
+                <form>
+                    <div class="form-group">
+                      <label for="TotalTime" style = "font-family: 'Roboto', sans-serif;">Total Time</label>
+                      <input type="number" 
+                             style = "font-family: 'Roboto', sans-serif;" 
+                             class="form-control"
+                             placeholder="Enter Total time in mins">
+                      
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputPassword1" style = "font-family: 'Roboto', sans-serif;">Teaching Time</label>
+                      <input type="number" 
+                             style = "font-family: 'Roboto', sans-serif;" 
+                             class="form-control" 
+                             placeholder="Enter teaching time in mins">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputPassword1" style = "font-family: 'Roboto', sans-serif;">Questions Time</label>
+                        <input type="number" 
+                               style = "font-family: 'Roboto', sans-serif;" 
+                               class="form-control" 
+                               placeholder="Enter Questions time in mins">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-lg btn-info">Submit</button>
+                  </form>
+
+
+               </div>
+               
+            </div>
+        </div>
+        
+
+    </div>
+
+    
+
+</div>
+
+
+           
+</section>
+
+{% endblock %}

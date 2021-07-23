@@ -4,7 +4,7 @@ from . import views
 app_name = 'RTApp'
 
 urlpatterns = [
-    # path('', views.home, name = 'home')
+    path('home', views.home, name = 'home'),
     path('', views.StandardView, name = 'standard'),
     path('std/<str:std_id>/sec', views.SectionView, name= 'single-std'),
     path('sec/<str:sec_id>/sub', views.SubjectView, name= 'single-sec'),
