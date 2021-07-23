@@ -105,3 +105,24 @@ class Detail(models.Model):
         return '{}'.format(str(self.created_at))
     def get_url(self):
         pass
+
+
+class Data(models.Model):
+    data_id = models.AutoField(primary_key = True)
+    teacher = models.ForeignKey(User, on_delete= models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add = True)
+    standard = models.CharField(max_length = 25)
+    section = models.CharField(max_length = 25)
+    subject = models.CharField(max_length = 45)
+    topic = models.CharField(max_length = 100)
+    total_time = models.IntegerField(null=True)
+    teaching = models.IntegerField(null=True)    
+    questioning = models.IntegerField(null=True)
+    class Meta:
+        verbose_name = "Data"
+        verbose_name_plural = "API-Data"
+        ordering = ('-created_at', )
+    def __str__(self):
+        return '{}'.format(str(self.created_at))
+    def get_url(self):
+        pass

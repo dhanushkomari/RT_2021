@@ -1,8 +1,12 @@
 from django.shortcuts import render
-from .models import Configuration, Standard, Section, Detail, Subject, Topic
+from rest_framework import serializers
+from .models import Configuration, Standard, Section, Detail, Subject, Topic, Data
 from django.contrib.auth.models import User
 from .forms import ConfigurationForm
 from django.http import HttpResponse
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from .serializers import DataSerializer
 
 
 # Create your views here.
@@ -99,7 +103,18 @@ def ConfigurationView(request, topic_id):
             RR.questioning = t3
             RR.save()
             print(RR.total_time, RR.questioning)
-        
+
+            from .models import Data
+            D = Data.objects.create(
+                                    teacher = RR.teacher,
+                                    standard = RR.standard,
+                                    section = RR.section,
+                                    subject = RR.subject,
+                                    topic = RR.topic,
+                                    total_time = t1,
+                                    teaching = t2,
+                                    questioning = t3,
+                                )
             return HttpResponse('your details are ready')
     else:
         form = ConfigurationForm
@@ -107,5 +122,13 @@ def ConfigurationView(request, topic_id):
     return render(request, 'RTApp/conf.html', {'form':form})
 
 
+#######    Creating API   #######
+
+
+@api_view(['GET'])
+def DataView(request):
+    data = Data.objects.latest('pk')
+    serializers = DataSerializer(data, many = False)
+    return Response(serializers.data)
 
 

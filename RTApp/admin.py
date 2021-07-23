@@ -1,6 +1,13 @@
 from django.contrib import admin
-from RTApp.models import Detail, Standard, Section, Subject, Topic, Configuration
-
+from RTApp.models import (
+                            Detail, 
+                            Standard, 
+                            Section, 
+                            Subject, 
+                            Topic, 
+                            Configuration,
+                            Data,
+                            )
 # Register your models here.
 
 admin.site.site_header = 'Robot-Teacher'
@@ -39,5 +46,10 @@ class DetailAdmin(admin.ModelAdmin):
     list_display = ['detail_id','teacher',]
     list_per_page = 20
 admin.site.register(Detail, DetailAdmin)
+
+class DataAdmin(admin.ModelAdmin):
+    list_display = ['data_id', 'created_at', 'teacher', 'standard']
+    list_per_page = 20
+admin.site.register(Data, DataAdmin)
 
 
